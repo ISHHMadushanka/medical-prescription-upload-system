@@ -31,19 +31,22 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('prescription.index') }}">Prescriptions</a>
+                            <a class="nav-link" href="{{ route('prescriptions.index') }}">Prescriptions</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('prescription.create') }}">Prescriptions Upload</a>
+                            <a class="nav-link" href="{{ route('prescriptions.upload') }}">Prescriptions Upload</a>
                         </li>
+                        {{-- <li class="nav-item">
+
+                           <a class="nav-link" href="{{ route('quotations.create', ['prescription' => $prescription->id]) }}">Prepare Quotation</a>
+
+                        </li> --}}
+
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('quotations.create', ['prescription_id' => $prescription_id]) }}">Prepare Quotation</a>
-
+                            <a class="nav-link" href="{{ route('quotations.create',['prescription' => 1]) }}">Prepare Quotations</a>
                         </li>
 
-
-
-                    </ul>
+                         </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">

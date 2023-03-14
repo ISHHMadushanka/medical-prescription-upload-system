@@ -8,6 +8,12 @@
             <p>Note: {{ $prescription->note }}</p>
             <p>Delivery Address: {{ $prescription->delivery_address }}</p>
             <p>Delivery Time: {{ $prescription->delivery_time }}</p>
+            <p>Images:
+            @foreach(explode(',', $prescription->images) as $image)
+                <img src="{{ asset($image) }}" alt="Prescription Image" style="max-width: 200px; max-height: 200px; margin: 10px;">
+            @endforeach
+        </p>
+
             <div class="row">
                 <div class="col-md-12">
                     <form action="{{ route('quotations.store', $prescription->id) }}" method="POST">
@@ -30,7 +36,7 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="submit" class="btn btn-primary">Add</button>
                         <a href="{{ route('prescriptions.show', $prescription->id) }}" class="btn btn-secondary">Cancel</a>
                     </form>
                 </div>

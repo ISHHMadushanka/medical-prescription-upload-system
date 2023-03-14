@@ -43,7 +43,7 @@ class PrescriptionController extends Controller
 
         $prescription->save();
 
-        return redirect()->route('prescription.index')->with('success', 'Prescription uploaded successfully.');
+        return redirect()->route('prescriptions.index')->with('success', 'Prescription uploaded successfully.');
     }
 
     public function index()
@@ -54,7 +54,7 @@ class PrescriptionController extends Controller
 
     public function show($id)
     {
-        $prescription = Prescription::findOrFail($id);
+        $prescription = Prescription::find($id);
         $prescription_id = $prescription->id;
 
         return view('prescriptions.show', compact('prescription', 'prescription_id'));
